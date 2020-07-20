@@ -1,0 +1,5 @@
+<h1>Cats Index Page</h1>
+<% @cats.each do |cat| %>
+<p><%= link_to cat.name, cat_path(cat) %></p>
+<% end%>
+<%= button_to "NEW CAT", { :action => "new" }, :method => :get %>
