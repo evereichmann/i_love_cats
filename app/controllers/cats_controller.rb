@@ -16,18 +16,28 @@ class CatsController < ApplicationController
     end
 
     def create
-        cat = Cat.create(cats_params)
-        redirect_to cat_path(cat)
+        @cat = Cat.create(cats_params)
+        if @cat.valid?
+            redirect_to cat_path(@cat)
+        else  
+            flash[:my_errors] = @cat.errors.full_messages
+            redirect_to new_path
+        end    
     end    
     
     def edit
+        @cats = Cat.all
         @cat = Cat.find(params[:id])
     end
 
     def update
         @cat = Cat.find(params[:id])
-        @cat.update(cats_params)
-        redirect_to cat_path(@cat)
+        if @cat.update(cats_params)
+            redirect_to cat_path(@cat)  
+        else
+            flash[:my_errors] = @cat.errors.full_messages
+            redirect_to edit_cat_path(@cat)   
+        end
     end
 
     def destroy

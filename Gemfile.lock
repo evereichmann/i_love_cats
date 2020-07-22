@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 68b2cf26c1fcfec64d76913aaef9180d0a6ba9fc
+  revision: 32f59f3aca034a66676f94372ba9e57236a7204d
   branch: master
   specs:
     faker (2.13.0)
@@ -87,7 +87,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.3)
+    i18n (1.8.4)
       concurrent-ruby (~> 1.0)
     image_suckr (0.2.0)
     jbuilder (2.10.0)

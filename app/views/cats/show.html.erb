@@ -2,7 +2,8 @@
 <h2><%= @cat.name %></h2>
 <p><%= @cat.breed %></p>
 <p><%= @cat.age %></p>
-<img src="<%= @cat.img_url %>" alt="<%= @cat.name%>">
+<img src="<%= @cat.img_url %>"width="300" height="200" alt="<%= @cat.name%>">
 
 <%= button_to "DELETE", cat_path(@cat), method: :delete%>
 <%= button_to "EDIT", { :action => "edit" }, :method => :get %>
+<%= button_to "INDEX", {:action => "index"}, :method => :get %>
